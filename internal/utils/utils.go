@@ -27,13 +27,6 @@ func CheckPasswordHash(password, hash string) bool {
 // GenerateJWT generates a new JWT token for a given user ID.
 func GenerateJWT(userID int, username string) (string, error) {
 	expirationTime := time.Now().Add(24 * time.Hour)
-	claims := &jwt.RegisteredClaims{
-		Subject:   username,
-		ID:        string(rune(userID)), // Simple way to store user ID
-		ExpiresAt: jwt.NewNumericDate(expirationTime),
-		IssuedAt:  jwt.NewNumericDate(time.Now()),
-	}
-
 	// We can store userID in a custom claim instead for cleaner code
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
 		"user_id":  userID,
