@@ -1,0 +1,25 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+ticket-system
+
+# Test binary, built with `go test -c`
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Database file
+tickets.db
+*.db
+
+# Environment variables
+.env
+
+# IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
